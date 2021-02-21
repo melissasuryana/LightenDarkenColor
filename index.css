@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: white; 
+    color: #3e4560;    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    max-width: 500px;
+}
+
+.title {
+    margin: 20px 0px;
+    color: #3e4560;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+input {
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+.colorCard {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 25px;
+    border: 1px solid #3e4560;
+}
+
+.slider {
+    width: 100%;
+}
+
+#colorAdjustmentText {
+    text-align: center;
+}
+
+p{
+    font-size: 20px;
+    margin-bottom: 20px;
+}

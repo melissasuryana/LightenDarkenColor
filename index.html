@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css"><link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+	</head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1 class="title">Color Lighten/Darken Tool</h1>
+
+                <label for="colorInput">Set the original color</label>
+                <input type="color" name="colorInput" id="colorInput" value="#6fa9e7"/>
+
+                <p>Slide to lighten/darken the color</p>
+                <label for="colorAdjustment" id="colorAdjustmentText">0%</label>
+                <input type="range" min="-100" max="100" value="0" 
+                    name="colorAdjustment" class="slider" id="colorAdjustment" />
+
+                <p id="originalColorLabel">Original color #6fa9e7</p>    
+                <div class="colorCard" id="originalColor"></div>
+                
+                <p id="alteredColorLabel">Altered color #6fa9e7</p> 
+                <div class="colorCard" id="alteredColor"></div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
