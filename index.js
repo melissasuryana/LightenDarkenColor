@@ -1,19 +1,15 @@
 const colorInput = document.getElementById('colorInput');
-const originalColorCard = document.getElementById('originalColor');
 const alteredColorCard = document.getElementById('alteredColor');
 
-const sliderText = document.getElementById('colorAdjustmentText');
 const slider = document.getElementById('colorAdjustment');
 
 const originalColorLabel = document.getElementById('originalColorLabel');
 const alteredColorLabel = document.getElementById('alteredColorLabel');
 
-originalColorCard.style.backgroundColor = colorInput.value;
 alteredColorCard.style.backgroundColor = colorInput.value;
 
 colorInput.addEventListener('change', () => {
-    originalColorCard.style.backgroundColor = colorInput.value;
-    originalColorLabel.innerText = `Original Color ${colorInput.value}`;
+    originalColorLabel.innerText = `Hex value: ${colorInput.value}`;
 
     if (slider.value) {
       updateAlteredColorCard();
@@ -21,8 +17,6 @@ colorInput.addEventListener('change', () => {
 });
 
 slider.addEventListener('input', () => {
-  sliderText.textContent = `${slider.value}%`;
-
   if (colorInput.value) {
     updateAlteredColorCard();
   }
@@ -31,7 +25,7 @@ slider.addEventListener('input', () => {
 function updateAlteredColorCard() {
   const alteredHexValue = alterColor(colorInput.value, slider.value);
   alteredColorCard.style.backgroundColor = alteredHexValue;
-  alteredColorLabel.innerText = `Altered Color ${alteredHexValue}`;
+  alteredColorLabel.innerText = `Hex value: ${alteredHexValue}`;
 }
 
 function hexToRGB(hex) {
@@ -68,9 +62,6 @@ function hexToRGB(hex) {
   function alterColor (hex, percentage) {
     const {r,g,b} = hexToRGB(hex);
     
-    console.log(r);
-    console.log(g);
-    console.log(b);
     const amount = Math.floor((percentage/100) * 255);
     
     const newR = Math.max(Math.min(r + amount, 255), 0);
